@@ -704,7 +704,7 @@ function dco(signed, committerMap) {
 function cla(signed, committerMap) {
     if (signed) {
         const line1 = input.getCustomAllSignedPrComment() || `All contributors have signed the CLA  ✍️ ✅`;
-        const text = `****CLA Assistant Lite bot**** ${line1}`;
+        const text = `${line1}`;
         return text;
     }
     let committersCount = 1;
@@ -713,7 +713,7 @@ function cla(signed, committerMap) {
     }
     let you = committersCount > 1 ? `you all` : `you`;
     let lineOne = (input.getCustomNotSignedPrComment() || `<br/>Thank you for your submission, we really appreciate it. Like many open-source projects, we ask that $you sign our [Contributor License Agreement](${input.getPathToDocument()}) before we can accept your contribution. You can sign the CLA by just posting a Pull Request Comment same as the below format.<br/>`).replace('$you', you);
-    let text = `**CLA Assistant Lite bot:** ${lineOne}
+    let text = `${lineOne}
    - - -
    ${input.getCustomPrSignComment() || "I have read the CLA Document and I hereby sign the CLA"}
    - - -
