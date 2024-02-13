@@ -592,10 +592,10 @@ function getComment() {
             //TODO: check the below regex
             // using a `string` true or false purposely as github action input cannot have a boolean value
             if ((0, getInputs_1.getUseDcoFlag)() === 'true') {
-                return response.data.find(comment => comment.body.match(/\bTrain Conductor$/));
+                return response.data.find(comment => comment.author.login === "steamweaver");
             }
             else if ((0, getInputs_1.getUseDcoFlag)() === 'false') {
-                return response.data.find(comment => comment.body.match(/\bTrain Conductor$/));
+                return response.data.find(comment => comment.author.login === "steamweaver");
             }
         }
         catch (error) {
