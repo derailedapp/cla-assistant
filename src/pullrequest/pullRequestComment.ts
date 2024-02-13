@@ -62,9 +62,9 @@ async function getComment() {
     //TODO: check the below regex
     // using a `string` true or false purposely as github action input cannot have a boolean value
     if (getUseDcoFlag() === 'true') {
-      return response.data.find(comment => comment.body.match(/\bTrain Conductor$/))
+      return response.data.find(comment => comment.user.login === "steamweaver")
     } else if (getUseDcoFlag() === 'false') {
-      return response.data.find(comment => comment.body.match(/\bTrain Conductor$/))
+      return response.data.find(comment => comment.user.login === "steamweaver")
     }
   } catch (error) {
     throw new Error(`Error occured when getting  all the comments of the pull request: ${error.message}`)
